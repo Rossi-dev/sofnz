@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ============================= */
+/* VARIABLES */
+/* ============================= */
+
+:root {
+  --background: #0d0d0d;
+  --foreground: #f5f5f5;
+}
+
+/* ============================= */
+/* BASE */
+/* ============================= */
+
+body {
+  background: radial-gradient(
+    circle at top,
+    #1b1207 0,
+    #050404 45%,
+    #020103 100%
+  );
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system,
+    BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  overflow-x: hidden;
+}
+
+.font-heading {
+  font-family: var(--font-heading),
+    "Cormorant Garamond",
+    "Times New Roman",
+    serif;
+}
+
+/* ============================= */
+/* GLASS PANEL */
+/* ============================= */
+
+.glass-panel {
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(198, 167, 94, 0.13),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 1)
+    );
+
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* ============================= */
+/* GOLD GRADIENT TEXT */
+/* ============================= */
+
+.gold-gradient-text {
+  background: linear-gradient(
+    120deg,
+    #c6a75e,
+    #f3e3b0,
+    #c8933b,
+    #f0d8a0,
+    #c6a75e
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text; /* compatibilité Safari */
+  color: transparent;
+}
+
+/* ============================= */
+/* ANIMATION NEIGE */
+/* ============================= */
+/* ============================= */
+/* SNOW & STARS WORKING VERSION */
+/* ============================= */
+
+.snow,
+.snow-slow,
+.stars {
+  position: fixed; /* couvre toute la fenêtre même si on scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* largeur = largeur de la fenêtre */
+  height: 100vh; /* hauteur = hauteur de la fenêtre */
+  background-repeat: repeat;
+  pointer-events: none; /* pour que le formulaire reste cliquable */
+}
+
+.snow {
+  background-image:
+    radial-gradient(3px 3px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 80px 120px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 150px 60px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(3px 3px at 200px 180px, rgba(255,255,255,0.5), transparent);
+  background-size: 250px 250px;
+  animation: snowUp 25s linear infinite;
+  opacity: 0.4;
+}
+
+.snow-slow {
+  background-image: inherit;
+  animation-duration: 40s;
+  opacity: 0.25;
+}
+
+.stars {
+  background-image:
+    radial-gradient(1px 1px at 100px 200px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 300px 100px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 500px 250px, rgba(255,255,255,0.6), transparent);
+  background-size: 600px 600px;
+  animation: starsUp 60s linear infinite;
+  opacity: 0.35;
+}
+/* KEYFRAMES */
+
+@keyframes snowUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-300px);
+  }
+}
+
+@keyframes starsUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+
+/* === VAGUE DORÉE FOOTER === */
+.gold-wave,
+.gold-wave-slow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(198,167,94,0.15), transparent 70%);
+  animation: waveMove 15s linear infinite;
+  opacity: 0.2;
+}
+
+.gold-wave-slow {
+  animation-duration: 30s;
+  opacity: 0.1;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-50px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
