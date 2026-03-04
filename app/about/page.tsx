@@ -158,7 +158,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/wisky5-removebg-.PNG"
+              src="/images/wisky5-removebg.PNG"
               alt="Premium whisky bottle"
               width={600}
               height={700}
